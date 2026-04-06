@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>법무법인 여온 | 스토킹 범죄 조기종결 센터</title>
+    
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --bg-color: #000000; 
+            --text-primary: #f5f5f7; 
+            --text-secondary: #86868b; 
+            --yeoon-main: #0a1b2a; 
+            --yeoon-accent: #c4a77d; /* Premium Gold */
+            --danger-red: #ff453a;
+            --success-green: #32d74b;
+            --card-bg: #111111;
+            
+            --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        body { font-family: var(--font-family); background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; word-break: keep-all; padding-bottom: 120px; }
+
+        .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Typography */
+        .h1-hero { font-size: 42px; font-weight: 700; line-height: 1.3; margin-bottom: 24px; background: linear-gradient(180deg, #ffffff 0%, #a1a1a1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.03em; }
+        .h2-section { font-size: 34px; font-weight: 700; line-height: 1.35; margin-bottom: 16px; text-align: center; }
+        .p-desc { font-size: 19px; color: var(--text-secondary); font-weight: 400; line-height: 1.6; }
+        .text-center { text-align: center; }
+        .red-highlight { color: var(--danger-red); font-weight: 600; }
+
+        /* Header */
+        header { position: fixed; top: 0; width: 100%; height: 60px; background: rgba(0,0,0,0.7); backdrop-filter: saturate(180%) blur(20px); z-index: 99; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; }
+        header .logo { font-size: 18px; font-weight: 600; color: #fff; letter-spacing: 0.1em; text-decoration: none; }
+        header .logo span { color: var(--yeoon-accent); }
+
+        /* Sections */
+        section { padding: 110px 0; }
+        
+        /* Hero Section */
+        .hero { padding-top: 180px; text-align: center; background: radial-gradient(circle at top, #151515 0%, #000 70%); }
+        .hero .tagline { display: inline-block; font-size: 17px; color: var(--danger-red); font-weight: 700; margin-bottom: 20px; letter-spacing: 0.05em; }
+        .hero .p-desc { max-width: 640px; margin: 0 auto; font-size: 18px; }
+
+        /* Solutions Section & Images */
+        .solution-row { display: flex; align-items: center; gap: 60px; margin-top: 80px; }
+        .solution-row:nth-child(even) { flex-direction: row-reverse; }
+        .solution-num { font-size: 15px; font-weight: 700; color: var(--yeoon-accent); margin-bottom: 10px; display: block; letter-spacing: 0.05em; }
+        .solution-text { flex: 1.2; }
+        .solution-text h3 { font-size: 28px; margin-bottom: 16px; color: #fff; line-height: 1.3; }
+        .solution-text p { font-size: 17px; color: var(--text-secondary); }
+        
+        .solution-image-container { 
+            flex: 1; width: 100%; max-width: 380px; aspect-ratio: 1 / 1; 
+            background-color: #1a1a1e; border-radius: 24px; overflow: hidden; 
+            border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
+            position: relative; display: flex; align-items: center; justify-content: center;
+        }
+        .solution-image-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .image-placeholder-text { position: absolute; color: rgba(255,255,255,0.3); font-size: 14px; text-align: center; line-height: 1.5; }
+
+        /* Lawyer Profile Section Styles */
+        .lawyer-profile-grid { display: flex; gap: 50px; align-items: center; background: #080808; padding: 60px; border-radius: 30px; border: 1px solid rgba(196, 167, 125, 0.1); margin-top: 50px; }
+        .lawyer-photo { flex: 0 0 320px; aspect-ratio: 3 / 4; background: #111; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); position: relative; }
+        .lawyer-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .lawyer-info { flex: 1; }
+        .lawyer-info .name { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .lawyer-info .name span { font-size: 18px; color: var(--yeoon-accent); margin-left: 10px; font-weight: 400; }
+        .lawyer-info .philosophy { font-size: 18px; color: var(--text-primary); margin: 20px 0; font-weight: 500; line-height: 1.5; border-left: 3px solid var(--yeoon-accent); padding-left: 20px; }
+        .lawyer-info .history { list-style: none; margin-top: 25px; }
+        .lawyer-info .history li { color: var(--text-secondary); font-size: 16px; margin-bottom: 10px; position: relative; padding-left: 15px; }
+        .lawyer-info .history li::before { content: '•'; position: absolute; left: 0; color: var(--yeoon-accent); }
+
+        /* [NEW] Social Proof Section (성공 사례) CSS */
+        .proof-card {
+            background: var(--card-bg); padding: 24px; border-radius: 16px; 
+            border: 1px solid rgba(255,255,255,0.05); transition: var(--transition);
+        }
+        .proof-card:hover { transform: translateY(-5px); border-color: rgba(196, 167, 125, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .proof-doc-area {
+            width: 100%; aspect-ratio: 3/4; background: #151515; border-radius: 8px; margin-bottom: 20px; 
+            display: flex; align-items: center; justify-content: center; position: relative; 
+            overflow: hidden; border: 1px solid rgba(255,255,255,0.05);
+        }
+        .proof-doc-area img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; filter: grayscale(50%); }
+        .proof-stamp {
+            position: absolute; color: rgba(196, 167, 125, 0.2); font-size: 28px; font-weight: 900; 
+            transform: rotate(-25deg); border: 4px solid rgba(196, 167, 125, 0.2); 
+            padding: 10px 15px; border-radius: 8px; letter-spacing: 0.1em;
+        }
+
+        /* Final Push Section (The Crossroads) */
+        .final-push { padding: 80px 0 140px; }
+        .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+        .choice-card { 
+            background: var(--card-bg); padding: 50px 32px; border-radius: 20px; 
+            border: 1px solid rgba(255,255,255,0.05); transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer; text-align: center; display: flex; flex-direction: column; justify-content: center;
+        }
+        .choice-card h3 { font-size: 22px; margin-bottom: 16px; color: #fff; transition: var(--transition); word-break: keep-all; }
+        .choice-card p { font-size: 16px; color: var(--text-secondary); line-height: 1.6; transition: var(--transition); word-break: keep-all; }
+        .choice-card.negative { border-color: rgba(255, 69, 58, 0.1); }
+        .choice-card.negative:hover { background: #000; border-color: rgba(255, 69, 58, 0.8); box-shadow: 0 15px 35px rgba(255, 69, 58, 0.15); transform: translateY(6px); }
+        .choice-card.negative:hover h3 { color: var(--danger-red); }
+        .choice-card.negative:hover p { color: rgba(255,255,255,0.5); }
+        .choice-card.positive { border-color: rgba(196, 167, 125, 0.2); background: linear-gradient(180deg, #111 0%, #151310 100%); }
+        .choice-card.positive:hover { background: linear-gradient(180deg, #1c1813 0%, #2a2216 100%); border-color: var(--yeoon-accent); box-shadow: 0 20px 40px rgba(196, 167, 125, 0.25); transform: translateY(-8px); }
+        .choice-card.positive:hover h3 { text-shadow: 0 0 15px rgba(196, 167, 125, 0.4); } 
+        .choice-card.positive:hover p { color: rgba(255,255,255,0.9); }
+
+        .final-quote { text-align: center; font-size: 22px; font-weight: 700; color: #fff; margin-top: 60px; line-height: 1.4; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+
+        /* Floating Form */
+        .floating-form-wrapper {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: rgba(15, 15, 17, 0.85); backdrop-filter: saturate(180%) blur(25px); -webkit-backdrop-filter: saturate(180%) blur(25px);
+            border-top: 1px solid rgba(255,255,255,0.1); padding: 18px 0; z-index: 100;
+        }
+        .floating-form { display: flex; gap: 12px; max-width: 860px; margin: 0 auto; align-items: center; padding: 0 24px; }
+        .floating-form .input-group { display: flex; gap: 12px; flex: 1; }
+        .floating-form input { flex: 1; padding: 16px 20px; border-radius: 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 16px; font-family: var(--font-family); transition: var(--transition); }
+        .floating-form button { padding: 16px 32px; border-radius: 14px; background: var(--yeoon-accent); color: #000; font-weight: 700; font-size: 17px; border: none; cursor: pointer; transition: var(--transition); white-space: nowrap; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .h1-hero { font-size: 30px; }
+            .h2-section { font-size: 26px; }
+            section { padding: 70px 0; }
+            .solution-row { flex-direction: column-reverse !important; gap: 32px; text-align: center; }
+            .solution-image-container { max-width: 100%; }
+            .lawyer-profile-grid { flex-direction: column; padding: 30px 20px; text-align: center; }
+            .lawyer-photo { flex: 0 0 auto; width: 100%; max-width: 260px; }
+            .lawyer-info .philosophy { border-left: none; border-top: 2px solid var(--yeoon-accent); padding: 20px 0 0 0; }
+            .lawyer-info .history li { text-align: left; }
+            .choice-grid { grid-template-columns: 1fr; gap: 16px; }
+            .choice-card { padding: 30px 24px; }
+            .floating-form { flex-direction: column; }
+            .floating-form .input-group { width: 100%; }
+            .floating-form button { width: 100%; }
+            body { padding-bottom: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="width: 100%; display: flex; justify-content: center;">
+            <a href="#" class="logo">YEOON <span>與溫</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <span class="tagline">스토킹 범죄 기소 전(前) 방어</span>
+                <h1 class="h1-hero">스토킹 초범 구속률 <span style="color: var(--danger-red);">3배 급증</span><br>단 <span style="color: var(--yeoon-accent);">'1명'</span>도 모르게 덮어드립니다</h1>
+                <p class="p-desc">세상 모두 등 돌릴 때,<br>여온은 오직 당신을 완벽하게 지켜냅니다</p>
+            </div>
+        </section>
+
+        <section style="background-color: #050505;">
+            <div class="container">
+                <h2 class="h2-section">스토킹 피의자 90%가 빠지는<br><span class="red-highlight">3가지 치명적 착각</span></h2>
+                <p class="p-desc text-center" style="margin-bottom: 50px;">"오해를 풀고 싶었을 뿐인데..."<br>당신의 이 행동이 지금 당신을 구속으로 몰아넣고 있습니다.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+                    <div style="background: var(--card-bg); padding: 40px 30px; border-radius: 20px; border-top: 4px solid var(--danger-red); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <span style="display: block; font-size: 15px; font-weight: 700; color: var(--danger-red); margin-bottom: 12px;">착각 01. 사과의 덫</span>
+                        <h3 style="font-size: 20px; margin-bottom: 16px; color: #fff;">"진심으로 사과하면<br>용서해주지 않을까?"</h3>
+                        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6;">당신의 사과 문자와 전화는 '지속적인 괴롭힘 및 2차 가해'의 완벽한 증거입니다. 용서가 아니라 <strong style="color: #fff;">구속 영장을 앞당기는 최악의 자해 행위</strong>입니다</p>
+                    </div>
+
+                    <div style="background: var(--card-bg); padding: 40px 30px; border-radius: 20px; border-top: 4px solid var(--danger-red); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <span style="display: block; font-size: 15px; font-weight: 700; color: var(--danger-red); margin-bottom: 12px;">착각 02. 해명의 덫</span>
+                        <h3 style="font-size: 20px; margin-bottom: 16px; color: #fff;">"경찰서에 가서<br>잘 해명하면 되겠지?"</h3>
+                        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6;">수사관은 이미 당신을 범죄자로 보고 있습니다. 변호사 동행 없는 조사는 <strong style="color: #fff;">매우 불리하게</strong> 흘러갑니다.</p>
+                    </div>
+
+                    <div style="background: var(--card-bg); padding: 40px 30px; border-radius: 20px; border-top: 4px solid var(--danger-red); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <span style="display: block; font-size: 15px; font-weight: 700; color: var(--danger-red); margin-bottom: 12px;">착각 03. 초범의 덫</span>
+                        <h3 style="font-size: 20px; margin-bottom: 16px; color: #fff;">"초범인데 설마...<br>감옥에 가겠어?"</h3>
+                        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6;">반의사불벌죄가 폐지되었습니다. 합의를 해도 처벌 대상이며, 최근 법원은 초범이라도 지속성이 인정되면 가차 없이 <strong style="color: #fff;">법정 구속(실형)</strong>을 선고하는 추세입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="h2-section">위험한 연락은 멈추십시오<br>이제 <span style="color: var(--yeoon-accent);">'여온'이 나섭니다</span></h2>
+                <p class="p-desc text-center" style="margin-bottom: 60px;">사과와 해명 문자는 증거가 될 뿐입니다</p>
+                
+                <div class="solution-row">
+                    <div class="solution-image-container">
+                        <img src="" alt="" onerror="this.style.display='none'">
+                        <span class="image-placeholder-text">1:1 정방형 이미지 삽입 영역<br>(예: 대리 합의를 진행하는 모습)</span>
+                    </div>
+                    <div class="solution-text">
+                        <span class="solution-num">STEP 01. 위험한 직접 연락 차단</span>
+                        <h3>가장 안전한 '대리 합의'</h3>
+                        <p>피해자에게 절대 다시 연락하지 마십시오. 여온의 범죄심리 특화 합의 전담팀이 투입되어 2차 가해 리스크를 원천 차단하고, 가장 부드럽고 합법적인 방식으로 '처벌불원서'를 받아냅니다.</p>
+                    </div>
+                </div>
+                
+                <div class="solution-row">
+                    <div class="solution-image-container">
+                        <img src="" alt="" onerror="this.style.display='none'">
+                        <span class="image-placeholder-text">1:1 정방형 이미지 삽입 영역<br>(예: 의뢰인과 조사 시나리오 짜는 모습)</span>
+                    </div>
+                    <div class="solution-text">
+                        <span class="solution-num">STEP 02. 수사관 앞 진술 통제</span>
+                        <h3>경찰 조사 1:1 밀착 동행</h3>
+                        <p>경찰서에 혼자 가지 마십시오. 조사 전 완벽한 예상 문답 시나리오를 설계하고, 스토킹 전문 변호사가 직접 동행하여 당신을 옭아매는 유도신문을 그 자리에서 단호하게 잘라냅니다.</p>
+                    </div>
+                </div>
+                
+                <div class="solution-row">
+                    <div class="solution-image-container">
+                        <img src="" alt="" onerror="this.style.display='none'">
+                        <span class="image-placeholder-text">1:1 정방형 이미지 삽입 영역<br>(예: 증거 자료를 분석하는 전문적인 모습)</span>
+                    </div>
+                    <div class="solution-text">
+                        <span class="solution-num">STEP 03. 압도적 방어 논리 구축</span>
+                        <h3>기소 전 조기종결 설계</h3>
+                        <p>불리한 증거에 지레 겁먹지 마십시오. 수많은 카톡과 통화 내역 속에서 상대방이 여지를 주었던 '정당한 맥락'을 찾아내, 수사관의 기소 프레임을 완전히 부숴버립니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: #050505;">
+            <div class="container">
+                <h2 class="h2-section">세상이 당신에게 차갑게 등 돌릴 때,<br>끝까지 당신의 편에 서는 사람.</h2>
+                <div class="lawyer-profile-grid">
+                    <div class="lawyer-photo">
+                        <img src="" alt="" onerror="this.style.display='none'">
+                        <span class="image-placeholder-text" style="color: rgba(255,255,255,0.2); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">변호사 프로필 사진 영역</span>
+                    </div>
+                    <div class="lawyer-info">
+                        <div class="name">법무법인 여온 대표변호사 <span>스토킹 전담 기동팀 총괄</span></div>
+                        <div class="philosophy">"이력보다 중요한 것은 의뢰인을 대하는 태도입니다. <br>당신의 평범했던 일상을 되찾아드리는 것이 여온의 유일한 사명입니다."</div>
+                        <ul class="history">
+                            <li>대한변호사협회 등록 형사법 전문 변호사</li>
+                            <li>수백 건의 스토킹 사건 조기 종결 및 불송치 성공</li>
+                            <li>범죄심리 및 디지털 포렌식 연계 방어 전략 수립 전문가</li>
+                            <li>경찰 수사 단계부터 영장실질심사까지 1:1 전담 마크</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="h2-section">법무법인 여온은<br>오직 <span style="color: var(--yeoon-accent);">'결과'</span>로 증명합니다.</h2>
+                <p class="p-desc text-center" style="margin-bottom: 60px;">수백 건의 데이터가 증명하는 스토킹 사건 '불송치' 및 '기각' 성공 사례</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+                    <div class="proof-card">
+                        <div class="proof-doc-area">
+                            <img src="" alt="결정문 이미지" onerror="this.style.display='none'">
+                            <span class="image-placeholder-text">불송치 결정문<br>이미지 삽입 영역</span>
+                            <div class="proof-stamp">불송치 결정</div>
+                        </div>
+                        <span style="display: inline-block; background: rgba(196, 167, 125, 0.15); color: var(--yeoon-accent); padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">공무원 신분 유지</span>
+                        <h3 style="font-size: 18px; color: #fff; line-height: 1.4; margin-bottom: 8px;">직장 동료 스토킹 혐의<br>경찰 수사 단계 조기 종결</h3>
+                    </div>
+
+                    <div class="proof-card">
+                        <div class="proof-doc-area">
+                            <img src="" alt="결정문 이미지" onerror="this.style.display='none'">
+                            <span class="image-placeholder-text">기각 결정문<br>이미지 삽입 영역</span>
+                            <div class="proof-stamp" style="color: rgba(255, 69, 58, 0.2); border-color: rgba(255, 69, 58, 0.2);">영장 기각</div>
+                        </div>
+                        <span style="display: inline-block; background: rgba(255, 69, 58, 0.15); color: var(--danger-red); padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">유치장 수감 방어</span>
+                        <h3 style="font-size: 18px; color: #fff; line-height: 1.4; margin-bottom: 8px;">잠정조치 위반 (접근금지)<br>구속영장 청구 완벽 기각</h3>
+                    </div>
+
+                    <div class="proof-card">
+                        <div class="proof-doc-area">
+                            <img src="" alt="결정문 이미지" onerror="this.style.display='none'">
+                            <span class="image-placeholder-text">불송치 결정문<br>이미지 삽입 영역</span>
+                            <div class="proof-stamp">불송치 결정</div>
+                        </div>
+                        <span style="display: inline-block; background: rgba(196, 167, 125, 0.15); color: var(--yeoon-accent); padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">전과 기록 원천 차단</span>
+                        <h3 style="font-size: 18px; color: #fff; line-height: 1.4; margin-bottom: 8px;">헤어진 연인 지속적 연락<br>포렌식 방어를 통한 무혐의</h3>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+                    <div class="proof-card">
+                        <div class="proof-doc-area">
+                            <img src="" alt="결정문 이미지" onerror="this.style.display='none'">
+                            <span class="image-placeholder-text">불송치 결정문<br>이미지 삽입 영역</span>
+                            <div class="proof-stamp">불송치 결정</div>
+                        </div>
+                        <span style="display: inline-block; background: rgba(196, 167, 125, 0.15); color: var(--yeoon-accent); padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">공무원 신분 유지</span>
+                        <h3 style="font-size: 18px; color: #fff; line-height: 1.4; margin-bottom: 8px;">직장 동료 스토킹 혐의<br>경찰 수사 단계 조기 종결</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: var(--yeoon-main);">
+            <div class="container">
+                <h2 class="h2-section" style="color: #fff;">여온에 사건을 맡긴다는 것,<br>완벽한 <span style="color: var(--yeoon-accent);">'일상 복귀'</span>를 의미합니다.</h2>
+                <p class="p-desc text-center" style="margin-bottom: 60px; color: rgba(255,255,255,0.8);">당신이 얻게 될 '확실한 결과'만 약속합니다.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(196, 167, 125, 0.2);">
+                        <div style="font-size: 32px; margin-bottom: 16px;">📫</div>
+                        <h3 style="font-size: 20px; margin-bottom: 12px; color: #fff;">가족 모르게,<br>우편물 송달지 전면 변경</h3>
+                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6;">집이나 직장으로 날아오는 경찰 출석요구서, 수사 결과 통지서를 '법무법인 여온'으로 돌립니다. 가족과 동료는 이 사건의 존재조차 영원히 알 수 없습니다.</p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.03); padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(196, 167, 125, 0.2);">
+                        <div style="font-size: 32px; margin-bottom: 16px;">📱</div>
+                        <h3 style="font-size: 20px; margin-bottom: 12px; color: #fff;">담당 변호사 <br> 1:1 다이렉트 소통</h3>
+                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6;">사무장이 사건을 처리하지 않습니다. 불안에 떠는 당신을 위해 담당 변호사가 직접 소통하며, 실시간 진행 상황 브리핑과 철저한 멘탈 케어를 보장합니다.</p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.03); padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(196, 167, 125, 0.2);">
+                        <div style="font-size: 32px; margin-bottom: 16px;">🎯</div>
+                        <h3 style="font-size: 20px; margin-bottom: 12px; color: #fff;">전과 0줄,<br>조기종결 포커싱</h3>
+                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6;">재판까지 끌고 가지 않습니다. 경찰 단계 '불송치' 및 검찰 단계 '기소유예'를 타겟팅하여, 당신의 기록에 빨간 줄이 남는 것을 원천 차단합니다.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 50px; padding: 24px; background: rgba(0,0,0,0.3); border-radius: 16px; border-left: 4px solid var(--yeoon-accent);">
+                    <p style="color: #fff; font-size: 16px; font-style: italic;">"공무원이라 수사개시 통보가 가면 직위해제 될 위기였습니다. 여온 변호사님들이 선임 즉시 밤샘 작업으로 피해자 측과 연락해 통보 전 극적 합의를 이끌어내 주셨습니다. 저를 살려주신 은인입니다." <span style="color: var(--yeoon-accent); font-weight: 700; font-style: normal; margin-left: 10px;">- 의뢰인 박OO (초기 방어 및 불송치 종결)</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-push">
+            <div class="container">
+                <h2 class="h2-section">여기까지 읽으셨다면,<br>이미 스스로 알고 계실 겁니다</h2>
+                <p class="p-desc text-center">혼자서는 상황을 막을 수 없다는 사실을 말입니다<br>지금 당신 앞에는 두 가지 선택지가 있습니다</p>
+                
+                <div class="choice-grid">
+                    <div class="choice-card negative">
+                        <h3>이대로 창을 닫는 것</h3>
+                        <p>내일 아침, 경찰의 출석 요구 전화를 받고 <br> 가족과 직장에 이 사실을 어떻게 숨길지 <br> 덜덜 떨며 밤을 지새우는 길</p>
+                    </div>
+                    
+                    <div class="choice-card positive" onclick="window.location.href='tel:02-318-2981'">
+                        <h3 style="color: var(--yeoon-accent);">여온에 10분만 투자하는 것</h3>
+                        <p>변호사 비용 걱정하며 압박감을 느끼실 필요 없습니다. 지금 절대 해서는 안 될 치명적인 실수들을 통제하고, 구속만은 피할 <b>'첫 번째 방어선'</b>부터 <br> 확실하게 세워드리겠습니다.</p>
+                    </div>
+                </div>
+
+                <div class="final-quote">
+                    "망설임은 위기를 키울 뿐입니다.<br>당신의 남은 인생을 위해 용기를 내세요."
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-form-wrapper">
+        <div class="floating-form">
+            <div class="input-group">
+                <input type="text" placeholder="성함 (가명/익명 가능)" aria-label="이름">
+                <input type="tel" placeholder="연락처 (- 제외)" aria-label="연락처">
+            </div>
+            <button type="button">1:1 비밀 전략 회의 신청 ➔</button>
+        </div>
+    </div>
+
+</body>
+</html>
