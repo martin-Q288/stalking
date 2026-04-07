@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
     <title>법무법인 여온 | 스토킹 범죄 조기종결 센터</title>
+    <meta name="description" content="오해로 꼬여버린 스토킹 혐의, 법무법인 여온이 최선을 다해 풀어드립니다. 스토킹 경찰 조사 대응부터 대리 합의까지, 일상을 지키는 첫 번째 방어선.">
+    <meta property="og:title" content="법무법인 여온 | 스토킹 범죄 조기종결 센터">
+    <meta property="og:description" content="당신의 사랑이 범죄로 기록되기 전, 여온의 전문적인 방어 전략으로 일상을 지키십시오.">
     
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     
@@ -48,24 +52,18 @@
         .hero .tagline { display: inline-block; font-size: 17px; color: var(--danger-red); font-weight: 700; margin-bottom: 20px; letter-spacing: 0.05em; }
         .hero .p-desc { max-width: 640px; margin: 0 auto; font-size: 18px; }
 
-        /* Solutions Section & Images */
+        /* Solutions Section */
         .solution-row { display: flex; align-items: center; gap: 60px; margin-top: 80px; }
         .solution-row:nth-child(even) { flex-direction: row-reverse; }
         .solution-num { font-size: 15px; font-weight: 700; color: var(--yeoon-accent); margin-bottom: 10px; display: block; letter-spacing: 0.05em; }
         .solution-text { flex: 1.2; }
         .solution-text h3 { font-size: 28px; margin-bottom: 16px; color: #fff; line-height: 1.3; }
         .solution-text p { font-size: 17px; color: var(--text-secondary); }
-        
-        .solution-image-container { 
-            flex: 1; width: 100%; max-width: 380px; aspect-ratio: 1 / 1; 
-            background-color: #1a1a1e; border-radius: 24px; overflow: hidden; 
-            border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
-            position: relative; display: flex; align-items: center; justify-content: center;
-        }
+        .solution-image-container { flex: 1; width: 100%; max-width: 380px; aspect-ratio: 1 / 1; background-color: #1a1a1e; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5); position: relative; display: flex; align-items: center; justify-content: center; }
         .solution-image-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .image-placeholder-text { position: absolute; color: rgba(255,255,255,0.3); font-size: 14px; text-align: center; line-height: 1.5; }
 
-        /* Lawyer Profile Section Styles */
+        /* Lawyer Profile */
         .lawyer-profile-grid { display: flex; gap: 50px; align-items: center; background: #080808; padding: 60px; border-radius: 30px; border: 1px solid rgba(196, 167, 125, 0.1); margin-top: 50px; }
         .lawyer-photo { flex: 0 0 320px; aspect-ratio: 3 / 4; background: #111; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); position: relative; }
         .lawyer-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -77,57 +75,32 @@
         .lawyer-info .history li { color: var(--text-secondary); font-size: 16px; margin-bottom: 10px; position: relative; padding-left: 15px; }
         .lawyer-info .history li::before { content: '•'; position: absolute; left: 0; color: var(--yeoon-accent); }
 
-        /* [NEW] Social Proof Section (성공 사례) CSS */
-        .proof-card {
-            background: var(--card-bg); padding: 24px; border-radius: 16px; 
-            border: 1px solid rgba(255,255,255,0.05); transition: var(--transition);
-        }
+        /* Proof Section */
+        .proof-card { background: var(--card-bg); padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); transition: var(--transition); }
         .proof-card:hover { transform: translateY(-5px); border-color: rgba(196, 167, 125, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .proof-doc-area {
-            width: 100%; aspect-ratio: 3/4; background: #151515; border-radius: 8px; margin-bottom: 20px; 
-            display: flex; align-items: center; justify-content: center; position: relative; 
-            overflow: hidden; border: 1px solid rgba(255,255,255,0.05);
-        }
+        .proof-doc-area { width: 100%; aspect-ratio: 3/4; background: #151515; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
         .proof-doc-area img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; filter: grayscale(50%); }
-        .proof-stamp {
-            position: absolute; color: rgba(196, 167, 125, 0.2); font-size: 28px; font-weight: 900; 
-            transform: rotate(-25deg); border: 4px solid rgba(196, 167, 125, 0.2); 
-            padding: 10px 15px; border-radius: 8px; letter-spacing: 0.1em;
-        }
+        .proof-stamp { position: absolute; color: rgba(196, 167, 125, 0.2); font-size: 28px; font-weight: 900; transform: rotate(-25deg); border: 4px solid rgba(196, 167, 125, 0.2); padding: 10px 15px; border-radius: 8px; letter-spacing: 0.1em; }
 
-        /* Final Push Section (The Crossroads) */
+        /* Final Push */
         .final-push { padding: 80px 0 140px; }
         .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
-        .choice-card { 
-            background: var(--card-bg); padding: 50px 32px; border-radius: 20px; 
-            border: 1px solid rgba(255,255,255,0.05); transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            cursor: pointer; text-align: center; display: flex; flex-direction: column; justify-content: center;
-        }
+        .choice-card { background: var(--card-bg); padding: 50px 32px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); cursor: pointer; text-align: center; display: flex; flex-direction: column; justify-content: center; }
         .choice-card h3 { font-size: 22px; margin-bottom: 16px; color: #fff; transition: var(--transition); word-break: keep-all; }
         .choice-card p { font-size: 16px; color: var(--text-secondary); line-height: 1.6; transition: var(--transition); word-break: keep-all; }
-        .choice-card.negative { border-color: rgba(255, 69, 58, 0.1); }
         .choice-card.negative:hover { background: #000; border-color: rgba(255, 69, 58, 0.8); box-shadow: 0 15px 35px rgba(255, 69, 58, 0.15); transform: translateY(6px); }
         .choice-card.negative:hover h3 { color: var(--danger-red); }
-        .choice-card.negative:hover p { color: rgba(255,255,255,0.5); }
         .choice-card.positive { border-color: rgba(196, 167, 125, 0.2); background: linear-gradient(180deg, #111 0%, #151310 100%); }
         .choice-card.positive:hover { background: linear-gradient(180deg, #1c1813 0%, #2a2216 100%); border-color: var(--yeoon-accent); box-shadow: 0 20px 40px rgba(196, 167, 125, 0.25); transform: translateY(-8px); }
-        .choice-card.positive:hover h3 { text-shadow: 0 0 15px rgba(196, 167, 125, 0.4); } 
-        .choice-card.positive:hover p { color: rgba(255,255,255,0.9); }
 
         .final-quote { text-align: center; font-size: 22px; font-weight: 700; color: #fff; margin-top: 60px; line-height: 1.4; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
         /* Floating Form */
-        .floating-form-wrapper {
-            position: fixed; bottom: 0; left: 0; width: 100%;
-            background: rgba(15, 15, 17, 0.85); backdrop-filter: saturate(180%) blur(25px); -webkit-backdrop-filter: saturate(180%) blur(25px);
-            border-top: 1px solid rgba(255,255,255,0.1); padding: 18px 0; z-index: 100;
-        }
+        .floating-form-wrapper { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(15, 15, 17, 0.85); backdrop-filter: saturate(180%) blur(25px); border-top: 1px solid rgba(255,255,255,0.1); padding: 18px 0; z-index: 100; }
         .floating-form { display: flex; gap: 12px; max-width: 860px; margin: 0 auto; align-items: center; padding: 0 24px; }
-        .floating-form .input-group { display: flex; gap: 12px; flex: 1; }
         .floating-form input { flex: 1; padding: 16px 20px; border-radius: 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 16px; font-family: var(--font-family); transition: var(--transition); }
         .floating-form button { padding: 16px 32px; border-radius: 14px; background: var(--yeoon-accent); color: #000; font-weight: 700; font-size: 17px; border: none; cursor: pointer; transition: var(--transition); white-space: nowrap; }
 
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .h1-hero { font-size: 30px; }
             .h2-section { font-size: 26px; }
@@ -151,84 +124,80 @@
 
     <header>
         <div class="container" style="width: 100%; display: flex; justify-content: center;">
-            <a href="#" class="logo">법무법인<span>여온</span></a>
+            <a href="#" class="logo"> 스토킹 변호사 <span>법무법인 여온</span></a>
         </div>
     </header>
 
     <main>
         <section class="hero">
             <div class="container">
-                <span class="tagline">스토킹 범죄 기소 전(前) 방어</span>
-                <h1 class="h1-hero">잘 해보려다 오해로 꼬인 상황, <br> <span style="color: var(--danger-red);">풀고 싶나요?</span><br> <span style="color: var(--yeoon-accent);"></span></h1>
-                <p class="p-desc">당신의 억울함이 범죄로 이어지지 않도록 <br> 현실 직시가 우선입니다</p>
+                <span class="tagline">사랑과 범죄 사이</span>
+                <h1 class="h1-hero">내 진심이 스토킹이라고?<br> <span style="color: var(--danger-red);">여온이 답해드립니다</span></h1>
+                <p class="p-desc"> 스토킹처벌법 및 스토킹범죄의처벌등에관한법률 대응 </p>
             </div>
         </section>
 
         <section style="background-color: #050505;">
-            <div class="container">
-                <h2 class="h2-section">스토킹 피의자 90%가 빠지는<br><span class="red-highlight">3가지 치명적 착각</span></h2>
-                <p class="p-desc text-center" style="margin-bottom: 50px;">"오해를 풀고 싶었을 뿐인데..."<br>당신의 이 행동이 지금 당신을 구속으로 몰아넣고 있습니다.</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
-                    <div style="background: var(--card-bg); padding: 40px 30px; border-radius: 20px; border-top: 4px solid var(--danger-red); border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <span style="display: block; font-size: 15px; font-weight: 700; color: var(--danger-red); margin-bottom: 12px;">착각 01. 사과의 덫</span>
-                        <h3 style="font-size: 20px; margin-bottom: 16px; color: #fff;">"진심으로 사과하면<br>용서해주지 않을까?"</h3>
-                        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6;">당신의 사과 문자와 전화는 '지속적인 괴롭힘 및 2차 가해'의 완벽한 증거입니다. 용서가 아니라 <strong style="color: #fff;">처벌을 앞당기는 최악의 행위</strong>입니다</p>
-                    </div>
+        <div class="container">
+            <h2 class="h2-section">당신의 <span class="red-highlight">'진심'</span>이<br><span class="red-highlight">'범죄'</span>로 오역되는 3가지 이유</h2>
+            <p class="p-desc text-center" style="margin-bottom: 60px;"> 협박죄성립요건 및 협박죄처벌 검토 </p>
 
-                    <div style="background: var(--card-bg); padding: 40px 30px; border-radius: 20px; border-top: 4px solid var(--danger-red); border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <span style="display: block; font-size: 15px; font-weight: 700; color: var(--danger-red); margin-bottom: 12px;">착각 02. 해명의 덫</span>
-                        <h3 style="font-size: 20px; margin-bottom: 16px; color: #fff;">"경찰서에 가서<br>잘 해명하면 되겠지?"</h3>
-                        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6;">수사관은 이미 피해자의 말과 자료를 먼저 파악했습니다. <br> 변호사 동행 없는 조사는 <strong style="color: #fff;">매우 불리하게</strong> 흘러갑니다.</p>
-                    </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+    <div style="background: var(--card-bg); padding: 40px 30px; border-radius: 20px; border-top: 4px solid var(--yeoon-accent); text-align: center;">
+        <span style="display: block; font-size: 15px; font-weight: 700; color: var(--yeoon-accent); margin-bottom: 12px;">01. 진심의 역설</span>
+        <h3 style="font-size: 20px; margin-bottom: 16px; color: #fff; line-height: 1.4; word-break: keep-all;">"사과하면 오해가 풀릴거야"</h3>
+        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; word-break: keep-all;">법은 당신의 사과를 <br> <strong style="color: #ff0000;">'반복적 가해'</strong>로 해석합니다 </p>
+    </div>
 
-                    <div style="background: var(--card-bg); padding: 40px 30px; border-radius: 20px; border-top: 4px solid var(--danger-red); border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <span style="display: block; font-size: 15px; font-weight: 700; color: var(--danger-red); margin-bottom: 12px;">착각 03. 초범의 덫</span>
-                        <h3 style="font-size: 20px; margin-bottom: 16px; color: #fff;">"초범인데 설마...<br>감옥에 가겠어?"</h3>
-                        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6;">반의사불벌죄가 폐지되었습니다. 합의를 해도 처벌 대상이며, 최근 법원은 초범이라도 지속성이 인정되면 가차 없이 <strong style="color: #fff;">법정 구속(실형)</strong>을 선고하는 추세입니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div style="background: var(--card-bg); padding: 40px 30px; border-radius: 20px; border-top: 4px solid var(--yeoon-accent); text-align: center;">
+        <span style="display: block; font-size: 15px; font-weight: 700; color: var(--yeoon-accent); margin-bottom: 12px;">02. 해명의 덫</span>
+        <h3 style="font-size: 20px; margin-bottom: 16px; color: #fff; line-height: 1.4; word-break: keep-all;">"잘 설명하면 이해할거야"</h3>
+        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; word-break: keep-all;">법리적 필터 없는 수사 기록은 <br> <strong style="color: #ff0000;">'확실한 유죄의 증거'</strong>가 됩니다 <strong style="color: #ffffff;"> 조사관은 당신의 편이 아닙니다 </strong></p>
+    </div>
+
+    <div style="background: var(--card-bg); padding: 40px 30px; border-radius: 20px; border-top: 4px solid var(--yeoon-accent); text-align: center;">
+        <span style="display: block; font-size: 15px; font-weight: 700; color: var(--yeoon-accent); margin-bottom: 12px;">03. 비정한 현실</span>
+        <h3 style="font-size: 20px; margin-bottom: 16px; color: #fff; line-height: 1.4; word-break: keep-all;">"합의했으니 괜찮겠지?"</h3>
+        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; word-break: keep-all;"><strong style="color: #fff;">반의사불벌죄가 폐지</strong>되었습니다 <br> 합의를 해도, 초범이어도 <br> 처벌됩니다 </p>
+    </div>
+</div>
 
         <section>
             <div class="container">
-                <h2 class="h2-section">위험한 연락은 멈추십시오<br>이제 <span style="color: var(--yeoon-accent);">'여온'이 나섭니다</span></h2>
-                <p class="p-desc text-center" style="margin-bottom: 60px;">사과와 해명 문자는 증거가 될 뿐입니다</p>
+                <h2 class="h2-section">오해를 풀고 싶다면 <br>지금 바로 <span style="color: var(--yeoon-accent);">'여온'</span>에게</span></h2>
+                <p class="p-desc text-center" style="margin-bottom: 60px;">스토킹고소, 협박죄고소, 협박고소 대응<br>스토킹합의금 조율 및 대리 합의</p>
                 
                 <div class="solution-row">
                     <div class="solution-image-container">
-                        <img src="" alt="" onerror="this.style.display='none'">
-                        <span class="image-placeholder-text">1:1 정방형 이미지 삽입 영역<br>(예: 대리 합의를 진행하는 모습)</span>
+                        <span class="image-placeholder-text">대리 합의 진행 이미지<br>(피해자 설득 및 조율)</span>
                     </div>
                     <div class="solution-text">
-                        <span class="solution-num">STEP 01. 위험한 직접 연락 차단</span>
-                        <h3>가장 안전한 '대리 합의'</h3>
-                        <p>피해자에게 절대 다시 연락하지 마십시오. 여온의 범죄심리 특화 합의 전담팀이 투입되어 2차 가해 리스크를 원천 차단하고, 가장 부드럽고 합법적인 방식으로 '처벌불원서'를 받아냅니다.</p>
-                    </div>
-                </div>
-                
-                <div class="solution-row">
-                    <div class="solution-image-container">
-                        <img src="" alt="" onerror="this.style.display='none'">
-                        <span class="image-placeholder-text">1:1 정방형 이미지 삽입 영역<br>(예: 의뢰인과 조사 시나리오 짜는 모습)</span>
-                    </div>
-                    <div class="solution-text">
-                        <span class="solution-num">STEP 02. 수사관 앞 진술 통제</span>
+                        <span class="solution-num">STEP 01. 수사관 앞 진술 통제</span>
                         <h3>경찰 조사 1:1 밀착 동행</h3>
-                        <p>경찰서에 혼자 가지 마십시오. 조사 전 완벽한 예상 문답 시나리오를 설계하고, 스토킹 전문 변호사가 직접 동행하여 당신을 옭아매는 유도신문을 그 자리에서 단호하게 잘라냅니다.</p>
+                        <p>경찰 조사 당일 형사 전문 변호사가 직접 동행하여 <br> 당신의 <b>'억울함'</b>을 수사 기록에 정확히 남깁니다.</p>
                     </div>
                 </div>
                 
                 <div class="solution-row">
                     <div class="solution-image-container">
-                        <img src="" alt="" onerror="this.style.display='none'">
-                        <span class="image-placeholder-text">1:1 정방형 이미지 삽입 영역<br>(예: 증거 자료를 분석하는 전문적인 모습)</span>
+                        <span class="image-placeholder-text">조사 동행 이미지<br>(변호사와 의뢰인 리허설)</span>
                     </div>
                     <div class="solution-text">
-                        <span class="solution-num">STEP 03. 압도적 방어 논리 구축</span>
-                        <h3>공판 전 사건종결 설계</h3>
-                        <p>불리한 증거에 지레 겁먹지 마십시오. 변호사가 직접 수많은 카톡과 통화 내역 속에서 상대방이 여지를 주었던 <b>'정당한 정황'</b>을 찾아내, 수사단계에서 사건이 종결되도록 합니다.</p>
+                        <span class="solution-num">STEP 02. 진실을 재구성하는 방어 전략</span>
+                        <h3>유죄를 무죄로 바꾸는 의견서</h3>
+                        <p>상대방이 여지를 주었거나 오해를 유발한 <b>'사정'</b>을 <br> 모아, <b>'무죄'</b>로 돌리는 치밀한 변호인 의견서를 제출합니다</p>
+                        
+                    </div>
+                </div>
+
+                <div class="solution-row">
+                    <div class="solution-image-container">
+                        <span class="image-placeholder-text">증거 분석 이미지<br>(카톡/통화내역 분석)</span>
+                    </div>
+                    <div class="solution-text">
+                        <span class="solution-num">STEP 03. 위험한 직접 연락 차단</span>
+                        <h3>가장 안전한 '대리 합의'</h3>
+                        <p>당신이 직접 전하는 사과는 <strong style="color: #ff0000;">'2차 가해'</strong>가 되지만 <br> 변호사의 조율은 <strong style="color: #00ccff;">'진정한 반성'</strong>이 됩니다 <br> 여온은 변호사가 직접 피해자를 만납니다</p>
                     </div>
                 </div>
             </div>
@@ -236,15 +205,14 @@
 
         <section style="background-color: #050505;">
             <div class="container">
-                <h2 class="h2-section">세상이 당신에게 차갑게 등 돌릴 때,<br>끝까지 당신의 편에 서는 사람</h2>
+                <h2 class="h2-section">세상이 등을 돌릴 때,<br>여온은 당신의 편에 있습니다</h2>
                 <div class="lawyer-profile-grid">
                     <div class="lawyer-photo">
-                        <img src="" alt="" onerror="this.style.display='none'">
-                        <span class="image-placeholder-text" style="color: rgba(255,255,255,0.2); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">변호사 프로필 사진 영역</span>
+                        <span class="image-placeholder-text" style="color: rgba(255,255,255,0.2); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">김환섭 변호사 사진</span>
                     </div>
                     <div class="lawyer-info">
-                        <div class="name">법무법인 여온 대표변호사 <span>김환섭 변호사</span></div>
-                        <div class="philosophy">"이력보다 중요한 것은 <br> 의뢰인을 대하는 태도입니다. <br>당신의 평범했던 일상을 되찾아드리는 것이 여온의 유일한 사명입니다."</div>
+                        <div class="name">법무법인 여온 <br> 형사 전문 <span>김환섭 변호사</span></div>
+                        <div class="philosophy">"의뢰인과의 소통을 1순위로 생각합니다. <br> 당신의 억울함에 해결의 단서가 있습니다."</div>
                         <ul class="history">
                             <li>대한변호사협회 등록 형사법 전문 변호사</li>
                             <li>수백 건의 스토킹 사건 조기 종결 및 불송치 성공</li>
@@ -256,106 +224,72 @@
             </div>
         </section>
 
-        <section>
-            <div class="container">
-                <h2 class="h2-section">법무법인 여온은<br>오직 <span style="color: var(--yeoon-accent);">'결과'</span>로 증명합니다.</h2>
-                <p class="p-desc text-center" style="margin-bottom: 60px;">수백 건의 데이터가 증명하는 스토킹 사건 '불송치' 및 '기각' 성공 사례</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
-                    <div class="proof-card">
-                        <div class="proof-doc-area">
-                            <img src="" alt="결정문 이미지" onerror="this.style.display='none'">
-                            <span class="image-placeholder-text">불송치 결정문<br>이미지 삽입 영역</span>
-                            <div class="proof-stamp">불송치 결정</div>
-                        </div>
-                        <span style="display: inline-block; background: rgba(196, 167, 125, 0.15); color: var(--yeoon-accent); padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">공무원 신분 유지</span>
-                        <h3 style="font-size: 18px; color: #fff; line-height: 1.4; margin-bottom: 8px;">직장 동료 스토킹 혐의<br>경찰 수사 단계 조기 종결</h3>
-                    </div>
+        <section style="background-color: #050505; padding: 100px 0; border-top: 1px solid #111;">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <span style="font-size: 13px; color: var(--yeoon-accent); letter-spacing: 0.3em; font-weight: 700; text-transform: uppercase;">스토킹 FAQ</span>
+            <h2 style="font-size: 28px; color: #fff; margin-top: 15px; font-weight: 700; letter-spacing: -0.05em;">가장 많이 물어본 질문들</h2>
+            <p style="font-size: 15px; color: var(--text-secondary); margin-top: 12px; opacity: 0.7;">여온이 명쾌하게 답변해 드립니다.</p>
+        </div>
 
-                    <div class="proof-card">
-                        <div class="proof-doc-area">
-                            <img src="" alt="결정문 이미지" onerror="this.style.display='none'">
-                            <span class="image-placeholder-text">기각 결정문<br>이미지 삽입 영역</span>
-                            <div class="proof-stamp" style="color: rgba(255, 69, 58, 0.2); border-color: rgba(255, 69, 58, 0.2);">영장 기각</div>
-                        </div>
-                        <span style="display: inline-block; background: rgba(255, 69, 58, 0.15); color: var(--danger-red); padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">유치장 수감 방어</span>
-                        <h3 style="font-size: 18px; color: #fff; line-height: 1.4; margin-bottom: 8px;">잠정조치 위반 (접근금지)<br>구속영장 청구 완벽 기각</h3>
-                    </div>
-
-                    <div class="proof-card">
-                        <div class="proof-doc-area">
-                            <img src="" alt="결정문 이미지" onerror="this.style.display='none'">
-                            <span class="image-placeholder-text">불송치 결정문<br>이미지 삽입 영역</span>
-                            <div class="proof-stamp">불송치 결정</div>
-                        </div>
-                        <span style="display: inline-block; background: rgba(196, 167, 125, 0.15); color: var(--yeoon-accent); padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">전과 기록 원천 차단</span>
-                        <h3 style="font-size: 18px; color: #fff; line-height: 1.4; margin-bottom: 8px;">헤어진 연인 지속적 연락<br>포렌식 방어를 통한 무혐의</h3>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
-                    <div class="proof-card">
-                        <div class="proof-doc-area">
-                            <img src="" alt="결정문 이미지" onerror="this.style.display='none'">
-                            <span class="image-placeholder-text">불송치 결정문<br>이미지 삽입 영역</span>
-                            <div class="proof-stamp">불송치 결정</div>
-                        </div>
-                        <span style="display: inline-block; background: rgba(196, 167, 125, 0.15); color: var(--yeoon-accent); padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">공무원 신분 유지</span>
-                        <h3 style="font-size: 18px; color: #fff; line-height: 1.4; margin-bottom: 8px;">직장 동료 스토킹 혐의<br>경찰 수사 단계 조기 종결</h3>
-                    </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            
+            <details style="border-bottom: 1px solid #1a1a1a; cursor: pointer;" open>
+                <summary style="padding: 25px 0; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #fff; font-size: 18px; font-weight: 600;">
+                    Q1. 사과하고 싶어 연락한 것뿐인데, 제가 정말 가해자인가요?
+                    <span style="color: var(--yeoon-accent); font-size: 20px;">+</span>
+                </summary>
+                <div style="padding: 0 0 30px 0; font-size: 15px; color: #aaa; line-height: 1.8; word-break: keep-all;">
+                    많은 의뢰인분들이 억울해하시지만, 현재 <b>스토킹처벌법</b>과 <b>스토킹범죄의처벌등에관한법률</b>은 당신의 '의도'보다 피해자가 느낀 '불안감'에 집중합니다. <b>스토킹법</b>상 <b>스토킹기준</b>에 따르면 정당한 이유 없는 반복적 접근은 모두 <b>스토킹범죄</b>로 규정됩니다. 본인이 <b>스토커</b>라고 생각하지 않더라도, <b>스토킹처벌</b> 수위가 높아진 현시점에서는 <b>성폭력사례</b> 분석을 통해 본인의 행위가 <b>스토킹</b> 혹은 <b>사이버스토킹</b>에 해당하는지 <b>스토킹전문변호사</b>와 즉시 진단해야 <b>성범죄조회서</b>에 오점을 남기지 않습니다.
                 </div>
-            </div>
-        </section>
+            </details>
 
-        <section style="background-color: var(--yeoon-main);">
-            <div class="container">
-                <h2 class="h2-section" style="color: #fff;">여온에 사건을 맡긴다는 것,<br>완벽한 <span style="color: var(--yeoon-accent);">'일상 복귀'</span>를 의미합니다.</h2>
-                <p class="p-desc text-center" style="margin-bottom: 60px; color: rgba(255,255,255,0.8);">당신이 얻게 될 '확실한 결과'만 약속합니다.</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
-                    <div style="background: rgba(255,255,255,0.03); padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(196, 167, 125, 0.2);">
-                        <div style="font-size: 32px; margin-bottom: 16px;">📫</div>
-                        <h3 style="font-size: 20px; margin-bottom: 12px; color: #fff;">가족 모르게,<br>우편물 송달지 전면 변경</h3>
-                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6;">집이나 직장으로 날아오는 경찰 출석요구서, 수사 결과 통지서를 '법무법인 여온'으로 돌립니다. 가족과 동료는 이 사건의 존재조차 영원히 알 수 없습니다.</p>
-                    </div>
-
-                    <div style="background: rgba(255,255,255,0.03); padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(196, 167, 125, 0.2);">
-                        <div style="font-size: 32px; margin-bottom: 16px;">📱</div>
-                        <h3 style="font-size: 20px; margin-bottom: 12px; color: #fff;">담당 변호사 <br> 1:1 다이렉트 소통</h3>
-                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6;">사무장이 사건을 처리하지 않습니다. 불안에 떠는 당신을 위해 담당 변호사가 직접 소통하며, 실시간 진행 상황 브리핑과 철저한 멘탈 케어를 보장합니다.</p>
-                    </div>
-
-                    <div style="background: rgba(255,255,255,0.03); padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(196, 167, 125, 0.2);">
-                        <div style="font-size: 32px; margin-bottom: 16px;">🎯</div>
-                        <h3 style="font-size: 20px; margin-bottom: 12px; color: #fff;">전과 0줄,<br>조기종결 포커싱</h3>
-                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6;">재판까지 끌고 가지 않습니다. 경찰 단계 '불송치' 및 검찰 단계 '기소유예'를 타겟팅하여, 당신의 기록에 빨간 줄이 남는 것을 원천 차단합니다.</p>
-                    </div>
+            <details style="border-bottom: 1px solid #1a1a1a; cursor: pointer;">
+                <summary style="padding: 25px 0; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #fff; font-size: 18px; font-weight: 600;">
+                    Q2. 경찰에서 연락이 왔습니다. 구속될 수도 있나요?
+                    <span style="color: var(--yeoon-accent); font-size: 20px;">+</span>
+                </summary>
+                <div style="padding: 0 0 30px 0; font-size: 15px; color: #aaa; line-height: 1.8; word-break: keep-all;">
+                    네, 매우 위험한 상황입니다. 최근 <b>스토킹고소</b> 사건에서는 피해자 보호를 위해 <b>접근금지명령</b>이나 <b>접근금지신청</b>이 즉각적으로 이뤄지며, 이를 위반할 시 <b>구속영장</b>이 청구될 확률이 매우 높습니다. <b>접근금지가처분</b> 통지를 받은 상태라면 더욱 주의해야 합니다. <b>약식명령</b>으로 끝날 거라 낙관하다가 갑자기 <b>공판</b>으로 넘어가 <b>스토커처벌</b>을 받는 경우가 허다합니다. 실력 있는 <b>스토킹변호사</b>의 조력 없이 혼자 대응하다가는 유치장에 수감되는 비극을 맞이할 수 있습니다.
                 </div>
+            </details>
 
-                <div style="margin-top: 50px; padding: 24px; background: rgba(0,0,0,0.3); border-radius: 16px; border-left: 4px solid var(--yeoon-accent);">
-                    <p style="color: #fff; font-size: 16px; font-style: italic;">"공무원이라 수사개시 통보가 가면 직위해제 될 위기였습니다. 여온 변호사님들이 선임 즉시 밤샘 작업으로 피해자 측과 연락해 통보 전 극적 합의를 이끌어내 주셨습니다. 저를 살려주신 은인입니다." <span style="color: var(--yeoon-accent); font-weight: 700; font-style: normal; margin-left: 10px;">- 의뢰인 박OO (초기 방어 및 불송치 종결)</span></p>
+            <details style="border-bottom: 1px solid #1a1a1a; cursor: pointer;">
+                <summary style="padding: 25px 0; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #fff; font-size: 18px; font-weight: 600;">
+                    Q3. 홧김에 한 말과 행동이 '협박'이나 '해킹'이라는데, 이게 말이 되나요?
+                    <span style="color: var(--yeoon-accent); font-size: 20px;">+</span>
+                </summary>
+                <div style="padding: 0 0 30px 0; font-size: 15px; color: #aaa; line-height: 1.8; word-break: keep-all;">
+                    감정이 격해져 내뱉은 말들이 <b>협박죄성립요건</b>을 충족하는 순간, <b>협박죄</b> 혹은 <b>특수협박죄</b> 혐의가 추가됩니다. 만약 흉기를 소지했거나 다중의 위력을 보였다면 <b>특수협박</b>으로 분류되어 <b>협박죄처벌</b>보다 훨씬 무거운 법의 심판을 받습니다. 특히 상대방의 SNS를 몰래 들어가는 행위는 <b>해킹</b>이나 <b>사이버폭력</b>, <b>명예훼손</b>으로 번질 수 있으며 이는 <b>데이트폭력</b> 범주에서도 매우 엄하게 다뤄집니다. <b>협박죄고소</b>나 <b>협박고소</b>를 당한 상태라면 <b>협박</b>의 의도가 없었음을 법리적으로 통역해야 합니다.
                 </div>
-            </div>
-        </section>
+            </details>
+
+            <details style="border-bottom: 1px solid #1a1a1a; cursor: pointer;">
+                <summary style="padding: 25px 0; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #fff; font-size: 18px; font-weight: 600;">
+                    Q4. 전과 없이 조용히 마무리할 방법은 없습니까?
+                    <span style="color: var(--yeoon-accent); font-size: 20px;">+</span>
+                </summary>
+                <div style="padding: 0 0 30px 0; font-size: 15px; color: #aaa; line-height: 1.8; word-break: keep-all;">
+                    가장 확실한 방법은 <b>스토킹기소유예</b>를 목표로 하는 것입니다. 이를 위해서는 <b>스토킹합의금</b> 조율을 포함한 전문적인 대리 합의가 필수적입니다. <b>주거침입죄</b>나 <b>공갈미수</b>, <b>그루밍범죄</b> 등의 혐의가 섞여 있다면 <b>데이트폭력처벌</b> 위기를 피하기 위해 더욱 치밀한 전략이 필요합니다. <b>스토킹벌금</b>이나 <b>협박죄벌금</b>, <b>특수협박벌금</b>이라도 줄이고 싶다면, 사건 초기부터 모든 정황을 재구성해야 합니다. 여온은 당신의 억울함이 평생의 전과로 남지 않도록 최선을 다하겠습니다.
+                </div>
+            </details>
+
+        </div>
+    </div>
+</section>
 
         <section class="final-push">
             <div class="container">
-                <h2 class="h2-section">여기까지 읽으셨다면,<br>이미 스스로 알고 계실 겁니다</h2>
-                <p class="p-desc text-center">혼자서는 상황을 막을 수 없다는 사실을 말입니다<br>지금 당신 앞에는 두 가지 선택지가 있습니다</p>
-                
+                <h2 class="h2-section">지금 당신에겐 두 가지 선택지가 있습니다</h2>
                 <div class="choice-grid">
                     <div class="choice-card negative">
-                        <h3>이대로 창을 닫는 것</h3>
-                        <p>내일 아침, 경찰의 출석 요구 전화를 받고 <br> 가족과 직장에 이 사실을 어떻게 숨길지 <br> 덜덜 떨며 밤을 지새우는 길</p>
+                        <h3>이대로 창 닫기</h3>
+                        <p>인생을 건 <b>'위험한 도박'</b> 입니다.</p>
                     </div>
-                    
                     <div class="choice-card positive" onclick="window.location.href='tel:02-318-2981'">
-                        <h3 style="color: var(--yeoon-accent);">여온에 10분만 투자하는 것</h3>
-                        <p>변호사 비용 걱정하며 압박감을 느끼실 필요 없습니다. 지금 절대 해서는 안 될 치명적인 실수들을 통제하고, 구속만은 피할 <b>'첫 번째 방어선'</b>부터 <br> 확실하게 세워드리겠습니다.</p>
+                        <h3 style="color: var(--yeoon-accent);">지금 여온과 10분 통화</h3>
+                        <p>확실한 <b>'생존권'</b> 확보하기<br>(클릭 시 통화연결)</p>
                     </div>
-                </div>
-
-                <div class="final-quote">
-                    "망설임은 위기를 더 키울 뿐입니다<br>당신의 남은 인생을 위해 용기를 내세요."
                 </div>
             </div>
         </section>
@@ -364,12 +298,23 @@
     <div class="floating-form-wrapper">
         <div class="floating-form">
             <div class="input-group">
-                <input type="text" placeholder="성함 (가명/익명 가능)" aria-label="이름">
-                <input type="tel" placeholder="연락처 (- 제외)" aria-label="연락처">
+                <input type="text" placeholder="성함">
+                <input type="tel" placeholder="연락처 (- 제외)">
             </div>
             <button type="button">1:1 상담 신청 ➔</button>
         </div>
     </div>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "법무법인 여온 스토킹 전담 센터",
+      "description": "스토킹처벌법, 협박죄성립요건, 구속영장 기각 및 합의금 조율 전문.",
+      "telephone": "02-318-2981",
+      "keywords": "스토킹, 스토킹처벌법, 스토커, 해킹, 협박죄성립요건, 협박죄, 접근금지신청, 주거침입죄, 사이버폭력, 데이트폭력, 협박, 공판, 구속영장, 약식명령, 스토킹기준, 접근금지명령, 스토킹처벌, 스토킹범죄, 그루밍범죄, 특수협박죄, 특수협박, 스토킹변호사, 성범죄조회서, 협박죄처벌, 사이버스토킹, 스토커처벌, 성폭력사례, 접근금지가처분, 스토킹벌금, 공갈미수, 특수협박벌금, 스토킹범죄의처벌등에관한법률, 스토킹합의금, 스토킹법, 협박죄벌금, 스토킹고소, 데이트폭력처벌, 스토킹전문변호사, 스토킹기소유예, 협박죄고소, 협박고소, 명예훼손",
+      "serviceType": ["스토킹 범죄 방어", "구속영장 대응", "대리 합의"]
+    }
+    </script>
 </body>
 </html>
